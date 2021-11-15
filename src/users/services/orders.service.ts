@@ -21,6 +21,10 @@ export class OrdersService {
     return this.orderModel.findById(id);
   }
 
+  async ordersByCustomer(customer: string) {
+    return await this.orderModel.find({ customer }).exec();
+  }
+
   create(data: CreateOrderDto) {
     const newModel = new this.orderModel(data);
     return newModel.save();
