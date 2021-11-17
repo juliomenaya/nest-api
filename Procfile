@@ -1,0 +1,1 @@
+web: mpm run start:prod
